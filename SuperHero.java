@@ -1,6 +1,11 @@
 // extendsでHeroクラスを継承し、違いだけを書く
 public class SuperHero extends Hero {
   boolean flying;
+
+  public SuperHero() {
+    super();
+  }
+
   public void fly() {
     this.flying = true;
     System.out.println("飛び上がった！");

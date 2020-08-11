@@ -1,7 +1,11 @@
 public class Hero {
-  String name;
-  int hp;
+  String name = "ミナト";
+  int hp = 100;
   Sword sword;
+
+  public Hero() {
+    System.out.println("Heroのコンストラクタが動作");
+  }
 
   public void attack(Matango m) {
     System.out.println(this.name + "の攻撃！");
@@ -30,14 +34,5 @@ public class Hero {
 
   public void run() {
     System.out.println(this.name + "は、逃げ出した！");
-  }
-
-  public Hero(String name) {
-    this.hp = 100;
-    this.name = name;
-  }
-
-  public Hero() {
-    this("ミナト");
   }
 }
