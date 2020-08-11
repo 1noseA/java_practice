@@ -11,4 +11,9 @@ public class SuperHero extends Hero {
     System.out.println("着地した！");
   }
 
+  // 親クラスのメンバを上書き（オーバーライド）
+  public void run() {
+    System.out.println(this.name + "は撤退した");
+  }
+
 }
