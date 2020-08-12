@@ -1,5 +1,5 @@
 public class Fool extends Character implements Human {
-  public void attack(Matango m) {
+  public void attack(Monster m) {
     System.out.println(this.name + "は戦わずに遊んでいる");
   }
 

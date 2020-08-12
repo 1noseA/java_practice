@@ -1,5 +1,5 @@
 public class Hero extends Character {
-  public void attack(Matango m) {
+  public void attack(Monster m) {
     System.out.println(this.name + "の攻撃！");
     m.hp -= 5;
     System.out.println("敵に5ポイントのダメージを与えた！");

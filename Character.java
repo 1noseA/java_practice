@@ -10,6 +10,6 @@ public abstract class Character {
   }
 
   // abstract抽象メソッド
-  public abstract void attack(Matango m);
+  public abstract void attack(Monster m);
 
 }

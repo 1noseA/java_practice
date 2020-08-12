@@ -21,10 +21,10 @@ public class SuperHero extends Hero {
     System.out.println(this.name + "は撤退した");
   }
 
-  public void attack(Matango m) {
-    super.attack(m);
-    if (this.flying) {
-      super.attack(m);
-    }
-  }
+  // public void attack(Matango m) {
+  //   super.attack(m);
+  //   if (this.flying) {
+  //     super.attack(m);
+  //   }
+  // }
 }
