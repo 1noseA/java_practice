@@ -17,9 +17,9 @@ public class SuperHero extends Hero {
   }
 
   // 親クラスのメンバを上書き（オーバーライド）
-  public void run() {
-    System.out.println(this.name + "は撤退した");
-  }
+  // public void run() {
+  //   System.out.println(this.name + "は撤退した");
+  // }
 
   // public void attack(Matango m) {
   //   super.attack(m);

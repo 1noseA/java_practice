@@ -1,7 +1,15 @@
 public class Hero {
   private int hp;
-  String name;
+  private String name;
   Sword sword;
+
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   public void attack(Monster m) {
     System.out.println(this.name + "の攻撃！");
