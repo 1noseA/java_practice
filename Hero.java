@@ -1,7 +1,26 @@
 public class Hero {
-  private int hp;
-  private String name;
+  int hp;
+  String name;
   Sword sword;
+
+  public boolean equals(Object o) {
+    // 等値だったら等値
+    if (this == o) {
+      return true;
+    } 
+    if (o instanceof Hero) {
+      Hero h = (Hero) o;
+      // 名前が等しかったら等価
+      if (this.name.equals(h.name)) {
+        return true;
+      }
+    }
+    return true;
+  }
+
+  public String toString() {
+    return "名前：" + this.name + "/HP：" + this.hp;
+  }
 
   public String getName() {
     return this.name;
