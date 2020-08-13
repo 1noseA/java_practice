@@ -1,17 +1,11 @@
 public class Main {
     public static void main(String[] args) {
       Hero h1 = new Hero();
-      h1.name = "ミナト";
-      h1.hp = 100;
       Hero h2 = new Hero();
-      h2.name = "ミナト";
-      h2.hp = 100;
-
-      // String型は参照型だからh1==h2ではなくequals()を使う
-      if (h1.equals(h2) == true) {
-        System.out.println("同じ内容です");
-      } else {
-        System.out.println("違う内容です");
-      }
+      Hero.money = 100;
+      System.out.println(Hero.money); // 100と表示
+      System.out.println(h1.money); // 100と表示
+      h1.money = 300;
+      System.out.println(h2.money); // 300と表示
     }
 }

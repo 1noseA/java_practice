@@ -1,7 +1,10 @@
 public class Hero {
   int hp;
   String name;
-  Sword sword;
+  // インスタンスで一つではなく、Heroクラスに対して一つあればいい場合はstatic
+  // 静的フィールド（static field)
+  static int money;
+  // Sword sword;
 
   public boolean equals(Object o) {
     // 等値だったら等値
