@@ -6,6 +6,11 @@ public class Hero {
   static int money;
   // Sword sword;
 
+  // staticがついているメソッドは静的メソッド（クラスメソッド）
+  public static void setRandomMoney() {
+    Hero.money = (int) (Math.random() * 1000);
+  }
+
   public boolean equals(Object o) {
     // 等値だったら等値
     if (this == o) {
