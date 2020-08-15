@@ -1,68 +1,65 @@
-public class Hero {
-  int hp;
+public class Hero implements Cloneable {
   String name;
+  int hp;
+  Sword sword;
 
-  // hashCode()のオーバーライド
-  public int hashCode() {
-    int result = 37;
-    result = result * 31 +name.hashCode();
-    result = result * 31 +hp;
+  // clone()メソッドオーバーライドでコピーする
+  public Hero clone() {
+    Hero result = new Hero(name);
+    result.name = this.name;
+    result.hp = this.hp;
+    result.sword = this.sword;
     return result;
   }
 
-  // インスタンスで一つではなく、Heroクラスに対して一つあればいい場合はstatic
-  // 静的フィールド（static field)
-  static int money;
-  // Sword sword;
-
-  // staticがついているメソッドは静的メソッド（クラスメソッド）
-  public static void setRandomMoney() {
-    Hero.money = (int) (Math.random() * 1000);
+  public Hero(String name) {
+    this.name = name;
   }
 
-  public boolean equals(Object o) {
-    // 等値だったら等値
-    if (this == o) {
-      return true;
-    } 
-    if (o instanceof Hero) {
-      Hero h = (Hero) o;
-      // 名前が等しかったら等価
-      if (this.name.equals(h.name)) {
-        return true;
-      }
-    }
-    return true;
+  public Sword getSword() {
+    return sword;
   }
 
-  public String toString() {
-    return "名前：" + this.name + "/HP：" + this.hp;
+  public void setSword(Sword sword) {
+    this.sword = sword;
   }
 
   public String getName() {
-    return this.name;
+    return name;
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  public void attack(Monster m) {
-    System.out.println(this.name + "の攻撃！");
-    m.hp -= 5;
-    System.out.println("敵に5ポイントのダメージを与えた！");
-  }
+  // public String toString() {
+  //   return "名前：" + this.name + "/HP：" + this.hp;
+  // }
 
-  // publicを外すとpackage privateを指定したとみなされる
-  void sleep() {
-    this.hp = 100;
-    System.out.println(this.name + "は、眠って回復した！");
-  }
+  // public String getName() {
+  //   return this.name;
+  // }
 
-  private void die() {
-    System.out.println(this.name + "は死んでしまった！");
-    System.out.println("GAMEOVERです");
-  }
+  // public void setName(String name) {
+  //   this.name = name;
+  // }
+
+  // public void attack(Monster m) {
+  //   System.out.println(this.name + "の攻撃！");
+  //   m.hp -= 5;
+  //   System.out.println("敵に5ポイントのダメージを与えた！");
+  // }
+
+  // // publicを外すとpackage privateを指定したとみなされる
+  // void sleep() {
+  //   this.hp = 100;
+  //   System.out.println(this.name + "は、眠って回復した！");
+  // }
+
+  // private void die() {
+  //   System.out.println(this.name + "は死んでしまった！");
+  //   System.out.println("GAMEOVERです");
+  // }
   // public void sit(int sec) {
   //   // 何秒座るか引数で受け取る
   //   this.hp += sec;

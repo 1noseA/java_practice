@@ -1,20 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-      Hero.setRandomMoney();
-      System.out.println(Hero.money);
-      Hero h1 = new Hero();
-      System.out.println(h1.money);
-      
-      // newせずとも利用可能
-      // Hero.money = 100;
-      // System.out.println(Hero.money);
-
-      // Hero h1 = new Hero();
-      // Hero h2 = new Hero();
-      // Hero.money = 100;
-      // System.out.println(Hero.money); // 100と表示
-      // System.out.println(h1.money); // 100と表示
-      // h1.money = 300;
-      // System.out.println(h2.money); // 300と表示
+      Hero h1 = new Hero("ミナト");
+      Sword s = new Sword("はがねの剣");
+      h1.setSword(s);
+      System.out.println("装備：" + h1.getSword().getName());
+      System.out.println("clone()で複製します");
+      Hero h2 = h1.clone();
+      System.out.println("コピー元の勇者の剣の名前を変えます");
+      h1.getSword().setName("ひのきの棒");
+      System.out.println("コピー元とコピー先の勇者の装備を表示します");
+      System.out.println("コピー元：" + h1.getSword().getName() + "/コピー先：" + h2.getSword().getName());
     }
 }
