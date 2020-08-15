@@ -1,6 +1,15 @@
 public class Hero {
   int hp;
   String name;
+
+  // hashCode()のオーバーライド
+  public int hashCode() {
+    int result = 37;
+    result = result * 31 +name.hashCode();
+    result = result * 31 +hp;
+    return result;
+  }
+
   // インスタンスで一つではなく、Heroクラスに対して一つあればいい場合はstatic
   // 静的フィールド（static field)
   static int money;
