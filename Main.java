@@ -1,11 +1,17 @@
+import java.io.*;
 import java.util.*;
 public class Main {
-  public static void main(String[] args) {
-    String s = "ミナト, アサカ, スガワラ";
-    StringTokenizer st = new StringTokenizer(s, ",");
-    while(st.hasMoreTokens()) {
-      String t = st.nextToken();
-      System.out.println(t);
-    }
+  public static void main(String[] args) throws Exception {
+    Reader fr = new FileReader("c:\\rpgdata.properties");
+    Properties p = new Properties();
+    // ファイルの内容を読み込む
+    p.load(fr);
+    // キーを指定し値を取り出す
+    String name = p.getProperty("heroName");
+    String strHp = p.getProperty("heroHp");
+    int hp = Integer.parseInt(strHp);
+    System.out.println("勇者の名前：" + name);
+    System.out.println("勇者のHP；" + hp);
+    fr.close();
   }
 }
