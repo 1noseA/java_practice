@@ -1,14 +1,15 @@
+import java.io.*;
 public class Main {
-    public static void main(String[] args) {
-      Hero h1 = new Hero("ミナト");
-      Sword s = new Sword("はがねの剣");
-      h1.setSword(s);
-      System.out.println("装備：" + h1.getSword().getName());
-      System.out.println("clone()で複製します");
-      Hero h2 = h1.clone();
-      System.out.println("コピー元の勇者の剣の名前を変えます");
-      h1.getSword().setName("ひのきの棒");
-      System.out.println("コピー元とコピー先の勇者の装備を表示します");
-      System.out.println("コピー元：" + h1.getSword().getName() + "/コピー先：" + h2.getSword().getName());
+  public static void main(String[] args) throws IOException {
+    FileReader fw = new FileReader("rpgsave.dat");
+    System.out.println("すべてのデータを読んで表示します");
+    int i = fw.read();
+    while(i != -1) {
+      char c = (char) i;
+      System.out.println(c);
+      i = fw.read();
     }
+    System.out.println("ファイルの末尾に到達しました");
+    fw.close();
+  }
 }
