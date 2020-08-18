@@ -1,9 +1,12 @@
-// import java.io.*;
+import java.io.*;
 
-public class Hero {
+public class Hero implements Serializable {
+  // シリアルバージョンUID
+  private static final long serialVersionUID = 81923983183821L;
   private String name;
   private int hp;
   private int mp;
+  private Sword sword;
 
   public Hero(String name, int hp, int mp) {
     this.name = name;
