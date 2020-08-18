@@ -1,36 +1,36 @@
-public class Hero implements Cloneable {
-  String name;
-  int hp;
-  Sword sword;
+// import java.io.*;
 
-  // clone()メソッドオーバーライドでコピーする
-  public Hero clone() {
-    Hero result = new Hero(name);
-    result.name = this.name;
-    result.hp = this.hp;
-    result.sword = this.sword;
-    return result;
-  }
+public class Hero {
+  private String name;
+  private int hp;
+  private int mp;
 
-  public Hero(String name) {
+  public Hero(String name, int hp, int mp) {
     this.name = name;
+    this.hp = hp;
+    this.mp = mp;
   }
+  // Sword sword;
 
-  public Sword getSword() {
-    return sword;
-  }
+  // public Hero(String name) {
+  //   this.name = name;
+  // }
 
-  public void setSword(Sword sword) {
-    this.sword = sword;
-  }
+  // public Sword getSword() {
+  //   return sword;
+  // }
 
-  public String getName() {
-    return name;
-  }
+  // public void setSword(Sword sword) {
+  //   this.sword = sword;
+  // }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  // public String getName() {
+  //   return name;
+  // }
+
+  // public void setName(String name) {
+  //   this.name = name;
+  // }
 
   // public String toString() {
   //   return "名前：" + this.name + "/HP：" + this.hp;
