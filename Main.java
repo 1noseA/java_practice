@@ -1,17 +1,16 @@
 import java.io.*;
+import java.net.*;
 public class Main {
-  public static void main(String[] args) throws Exception {
-    Hero hero1 = new Hero("ミナト", 75, 18);
-    // ①インスタンスの直列化と保存
-    FileOutputStream fos = new FileOutputStream("c:\\rpgsave.dat");
-    ObjectOutputStream oos = new ObjectOutputStream(fos);
-    oos.writeObject(hero1);
-    oos.flush();
-    oos.close();
-    // ②ファイルからインスタンスを復元
-    FileInputStream fis = new FileInputStream("c:\\rpgsave.dat");
-    ObjectInputStream ois = new ObjectInputStream(fis);
-    Hero hero2 = (Hero) ois.readObject();
-    ois.close();
+  // 例外処理を省略(本来は書く)
+  public static void main(String[] args) throws IOException {
+    URL url = new URL("http://dokojava.jp");
+    InputStream is = url.openStream();
+    InputStreamReader isr = new InputStreamReader(is);
+    int i = isr.read();
+    while (i != -1) {
+      System.out.print((char) i);
+      i = isr.read();
+    }
+    isr.close();
   }
 }
