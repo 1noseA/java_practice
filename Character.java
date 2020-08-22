@@ -2,14 +2,12 @@
 // 抽象クラスはnewによるインスタンス化が禁止される
 // 子クラスでオーバーライドしないとエラーになる
 public abstract class Character {
-  String name;
-  int hp;
+  protected String name;
 
-  public void run() {
-    System.out.println(this.name + "は逃げ出した");
+  public final void introduce() {
+    System.out.println("私の名前は、" + this.name + "です。");
+    doIntroduce();
+    System.out.println("よろしくお願いします。");
   }
-
-  // abstract抽象メソッド
-  public abstract void attack(Monster m);
-
+  protected abstract void doIntroduce();
 }
