@@ -1,12 +1,18 @@
-import java.net.*;
+import java.util.*;
+
+class PrintingThread extends Thread {
+  public void run() {
+    for (int i = 0; i < 10; i++) {
+      System.out.print(i);
+    }
+  }
+}
+
 public class Main {
-  public static void main(String[] args) throws Exception {
-    System.out.println("起動完了");
-    ServerSocket svSock = new ServerSocket(39648);
-    Socket sock = svSock.accept();
-    System.out.println(sock.getInetAddress() + "から接続");
-    sock.getOutputStream().write("WELCOME".getBytes());
-    sock.getOutputStream().flush();
-    sock.close();
+  public static void main(String[] args) {
+    System.out.println("なにか入力してください");
+    Thread t = new PrintingThread();
+    t.start();
+    new Scanner(System.in).nextLine();
   }
 }
